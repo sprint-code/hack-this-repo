@@ -5,6 +5,7 @@ on: [pull_request, issues]
 jobs:
   greeting:
     runs-on: ubuntu-latest
+    environment: AW  # THIS WAS MISSING
     permissions:
       issues: write
       pull-requests: write
